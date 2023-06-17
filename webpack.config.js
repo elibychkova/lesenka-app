@@ -8,7 +8,7 @@ const plugins = [
     template: "./public/index.html",
   }),
   new MiniCssExtractPlugin({
-    filename: "[name].[contenthash].css",
+    filename: "./src/styles/main.css",
   }),
 ];
 
