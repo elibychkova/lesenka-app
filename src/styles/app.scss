@@ -1,5 +1,11 @@
+@import "./functions.scss";
+
 .main-bg {
-  background: linear-gradient(90deg, #f9bb88, #f4f4f4);
+  background: linear-gradient(
+    90deg,
+    var(--main-bg-color-second),
+    var(--main-bg-color)
+  );
   width: 100%;
   height: 200px;
 }
