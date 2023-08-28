@@ -1,7 +1,11 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+
+const mode =
+  process.env.NODE_ENV === "production" ? "production" : "development";
 
 const plugins = [
   new HtmlWebpackPlugin({
@@ -10,13 +14,15 @@ const plugins = [
   new MiniCssExtractPlugin({
     filename: "./src/styles/main.css",
   }),
+  new webpack.ProvidePlugin({
+    process: "process/browser",
+  }),
 ];
 
 if (process.env.SERVE) {
   plugins.push(new ReactRefreshWebpackPlugin());
 }
 
-let mode = "development";
 module.exports = {
   mode,
   plugins,
@@ -28,9 +34,16 @@ module.exports = {
     clean: true,
   },
 
+  resolve: {
+    extensions: [".js", ".jsx"],
+    alias: {
+      process: "process/browser",
+    },
+  },
+
   devServer: {
     hot: true,
-    open: true,
+    // open: true,
   },
 
   module: {
