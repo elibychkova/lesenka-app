@@ -1,14 +1,10 @@
 import React from 'react';
 import './headerFeedback.scss';
 
-export const HeaderFeedback = () => {
-    if (!!process.env.NODE_ENV) {
-
-        console.log('process.env :>> ', process.env);
-    }
+export const HeaderFeedback = () => { 
     return (
         <section className="headerFeedback">
-            {/* <div>{process.env.PHONE_ENV}</div> */}
+            <div>{process.env.REACT_APP_FEEDBACK_PHONE}</div>
         </section>
     );
 };

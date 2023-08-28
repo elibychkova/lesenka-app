@@ -8,8 +8,6 @@ export const App = () => {
   const ref = useRef(null);
   const [width, setWidth] = useState(0);
   
-  console.log('process.env :>> ', process.env.REACT_APP_API_URL);
-
   useEffect(() => {
     setWidth(ref.current.offsetWidth);
     console.log('width :>> ', ref.current.offsetWidth);
