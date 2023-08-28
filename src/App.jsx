@@ -7,8 +7,8 @@ import './styles/app.scss';
 export const App = () => {
   const ref = useRef(null);
   const [width, setWidth] = useState(0);
-  console.log('process.env :>> ', process.env);
-
+  
+  console.log('process.env :>> ', process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     setWidth(ref.current.offsetWidth);
