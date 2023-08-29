@@ -2,6 +2,10 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  margin: $marginMain;
+  padding: 25px $adaptivePadding 0;
+
+  .logoContainer {
+    width: 386px;
+    display: flex;
+  }
 }

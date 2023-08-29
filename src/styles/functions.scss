@@ -1,4 +1,6 @@
+@use "sass:math";
 @import "vars";
 
-$maxWidth: 1920;
-$marginMain: 0 18.28%;
+$maxWidth: 1920px;
+$koeff: 18.28;
+$adaptivePadding: math.div($maxWidth * $koeff, 100);

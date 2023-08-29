@@ -7,7 +7,9 @@ import './header.scss';
 export const Header = () => {
     return (
         <section className="header">
-            <img src={logoImg} alt="logo" className='logo'/>
+            <div className='logoContainer'>
+                <img src={logoImg} alt="logo" className='logo'/>
+            </div>
             <HeaderMenu/>
             <HeaderFeedback/>
         </section>
